@@ -34,7 +34,7 @@ socket.on('join_room_response',function(payload){
 		alert(payload.message);
 		return;
 	}
-	$('#messages').append('<p>New user joined the room: '+payload.usernam+'</p>');
+	$('#messages').append('<p>New user joined the room: '+payload.username+'</p>');
 });
 
 socket.on('send_message_response',function(payload){
@@ -42,7 +42,7 @@ socket.on('send_message_response',function(payload){
 		alert(payload.message);
 		return;
 	}
-	$('#messages').append('<p><b>'+payload.usernam+' says:</b> '+payload.message+'</p>');
+	$('#messages').append('<p><b>'+payload.username+' says:</b> '+payload.message+'</p>');
 });
 
 
