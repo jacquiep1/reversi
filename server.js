@@ -67,7 +67,7 @@ io.sockets.on('connection', function (socket) {
 	    	'result': 'success',
 		'room' : room joined,
 		'username' : username that joined,
-		'socket_id': the socket id of the person that,
+		'socket_id': the socket id of the person that joined,
 		'membership' : number of people in the room including the new one
 	    }
 	    or
@@ -141,7 +141,7 @@ io.sockets.on('connection', function (socket) {
 		    var success_data = {
 					result: 'success',
 					room: room,
-					username: players[socket_in_room].username,
+					username: players[socket_in_room].room,
 					socket_id: socket_in_room,
 					membership: numClients
 			           };
@@ -210,7 +210,7 @@ io.sockets.on('connection', function (socket) {
 			return;
 		}
 
-		var username = payload.username;
+		var username = players[socket.id].username;
 		if(('undefined' === typeof username) || !username){
 			var error_message = 'send_message didn\'t specify a username, command aborted';
 			log(error_message);
