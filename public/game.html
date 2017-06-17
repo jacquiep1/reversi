@@ -141,6 +141,29 @@
         </div>      
       </div>
 
+      
+      <!-- This is the code for how to display update notifications in the browser for messages -->
+
+	<script>
+		
+		var count = 0;
+		var title = document.title;
+
+		function changeTitle() {
+			count++;
+			var newTitle = '(' + count + ') ' + title;
+			document.title = newTitle;
+		}
+
+		function newUpdate() {
+			update = setInterval(changeTitle, 1000);
+		}
+
+		var docBody = document.getElementById('site-body');
+		docBody.onload = newUpdate;
+
+	</script>
+
 
     <!-- jQuery first, then Tether, then Bootstrap JS. -->
     <script src='https://code.jquery.com/jquery-3.2.1.min.js' integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=' crossorigin='anonymous'></script>

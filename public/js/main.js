@@ -337,7 +337,7 @@ socket.on('game_update',function(payload){
 			var seconds = Math.floor((elapsedmilli % (60 * 1000))/ 1000);
 
 			if(seconds < 10){
-			$('#elapsed').html(minute+':'+seconds);
+			$('#elapsed').html(minutes+':'+seconds);
 			}
 			else{
 			    $('#elapsed').html(minutes+':'+seconds);
